@@ -3,7 +3,7 @@
 <h1 class="tittle">Weather aplication</h1>
 <p class="text">find out the weather in your city</p>
 <input type="text" name="" placeholder="enter city">
-<button>Get weather</button>
+<button class="but">Get weather</button>
 </div>
 </template>
 
@@ -14,23 +14,38 @@ export default {
 </script>
 
 <style scoped>
+.but {
+    padding: 10px 10px;
+    border-radius: 10px;
+margin-left: 30px;
+cursor: pointer;
+font-size: 24px;
+}
+.but:hover {
+    background-color: gold;
+
+}
 input {
     width: 300px;
     height: 40px;
 border-radius: 10px;
 color: white;
 background-color: transparent;
-border-bottom: 3px solid gold;
+border-bottom: 3px solid white;
 font-size: 24px;
-padding: 5px 8px;
+padding: 5px 20px;
 outline: none;
-
+}
+input:hover {
+    border-bottom: 3px solid gold;
 }
 .text {
     margin-bottom: 30px;
+    font-size: 20px;
 }
 .tittle {
-margin-top: 50px;
+    font-size: 44px;
+margin-top: 20px;
 margin-bottom: 30px;
 }
 .wrapper {
