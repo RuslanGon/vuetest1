@@ -91,6 +91,6 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
+  gap: 40px;
 }
 </style>
