@@ -15,7 +15,6 @@
   </div>
   <div class="button-container">
     <button @click="SendData()">Send</button>
-    <!-- <button @click="resetData()">Reset</button> -->
   </div>
 
 </template>
@@ -53,17 +52,10 @@ export default {
         email: this.userEmail,
         pass: this.userPass
       });
-
-      this.resetData();
     },
     deleteUser(index) {
       this.users.splice(index, 1)
     }
-    // resetData() {
-    //   this.userName = '';
-    //   this.userEmail = '';
-    //   this.userPass = '';
-    // }
   }
 }
 </script>
