@@ -1,19 +1,26 @@
 <template>
 <div class="wrapper">
 <h1 class="tittle">Weather aplication</h1>
-<p class="text">find out the weather in your city</p>
-<input type="text" name="" placeholder="enter city">
+<p class="text">Find out the weather in <span class="span">{{ city }}</span></p>
+<input type="text" v-model="city" placeholder="enter city">
 <button class="but">Get weather</button>
 </div>
 </template>
 
 <script>
 export default {
-
+data() {
+    return {
+        city: ""
+    }
+}
 }
 </script>
 
 <style scoped>
+.span {
+    font-size: 40px;
+}
 .but {
     padding: 10px 10px;
     border-radius: 10px;
@@ -46,7 +53,7 @@ input:hover {
 .tittle {
     font-size: 44px;
 margin-top: 20px;
-margin-bottom: 30px;
+margin-bottom: 10px;
 }
 .wrapper {
     width: 900px;
