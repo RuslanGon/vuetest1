@@ -22,6 +22,9 @@ color: white;
 background-color: transparent;
 border-bottom: 3px solid gold;
 font-size: 24px;
+padding: 5px 8px;
+outline: none;
+
 }
 .text {
     margin-bottom: 30px;
