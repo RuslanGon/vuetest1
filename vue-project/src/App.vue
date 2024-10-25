@@ -5,7 +5,7 @@
     <input type="password" v-model="userPass" placeholder="password">
     <p class="error">{{ error }}</p>
   </div>
-  <User  v-for="(el, index) in users" :key="index" :el="el"/>
+  <User  v-for="(el, index) in users" :key="index" :el="el" :index="index" :deleteUser="deleteUser" />
 
   <div v-if="users.length == 0">
     <p>not users</p>
@@ -56,6 +56,9 @@ export default {
 
       this.resetData();
     },
+    deleteUser(index) {
+      this.users.splice(index, 1)
+    }
     // resetData() {
     //   this.userName = '';
     //   this.userEmail = '';
