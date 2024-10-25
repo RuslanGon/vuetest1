@@ -1,10 +1,12 @@
 <template>
-<div class="wrapper">
-<h1 class="tittle">Weather aplication</h1>
-<p class="text">Find out the weather in <span class="span">{{ city }}</span></p>
-<input type="text" v-model="city" placeholder="enter city">
-<button class="but">Get weather</button>
-</div>
+    <div class="wrapper">
+        <h1 class="tittle">Weather aplication</h1>
+        <p class="text">Find out the weather in 
+            <span class="span">{{ city == '' ? " your city" : city }}</span>
+        </p>
+        <input type="text" v-model="city" placeholder="enter city">
+        <button class="but">Get weather</button>
+    </div>
 </template>
 
 <script>
