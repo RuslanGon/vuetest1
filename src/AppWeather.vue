@@ -5,7 +5,9 @@
             <span class="span">{{ city == '' ? " your city" : city }}</span>
         </p>
         <input type="text" v-model="city" placeholder="enter city">
-        <button class="but">Get weather</button>
+        <button class="but" v-if="city != ''">Get weather</button>
+        <button class="but" v-else="city != ''">your city</button>
+
     </div>
 </template>
 
