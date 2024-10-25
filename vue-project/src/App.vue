@@ -1,27 +1,46 @@
 <template>
-    <div>
-      <h1>Hello</h1>
-      <User />
-      <Input />
-    </div>
-  </template>
-  
-  <script>
-  import User from './components/User.vue'
-  import Input from './components/Input.vue'
+  <div>
+    <input type="text" placeholder="name">
+    <input type="email" placeholder="email">
+    <input type="password" placeholder="password">
+  </div>
+</template>
 
-  
-  export default {
-    components: { User, Input },
-    data() {
-      return {
-        
-      }
+<script>
+
+
+
+export default {
+
+  data() {
+    return {
+
     }
+  },
+  methods: {
+
   }
-  </script>
-  
-  <style scoped>
-  
-  </style>
-  
+}
+</script>
+
+<style scoped>
+div {
+  margin: 0 auto;
+  background-color: black;
+  width: 300px;
+  height: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px;
+  border-radius: 10px;
+  color: white;
+}
+
+input {
+  height: 40px;
+  border: 1px solid white;
+  font-size: 20px;
+
+}
+</style>
