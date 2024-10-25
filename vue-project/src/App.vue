@@ -3,6 +3,7 @@
     <input type="text" v-model="userName" placeholder="name">
     <input type="email" v-model="userEmail" placeholder="email">
     <input type="password" v-model="userPass" placeholder="password">
+    <p class="error">{{ error }}</p>
     <p>{{ users }}</p>
   </div>
   <div class="button-container">
@@ -16,6 +17,7 @@ export default {
   data() {
     return {
       users: [],
+      error: '',
       userName: '',
       userEmail: '',
       userPass: ''
@@ -23,7 +25,14 @@ export default {
   },
   methods: {
     SendData() {
-      if (this.userName === '') return
+      if (this.userName === ''){
+        this.error = 'not name'
+      }else  if (this.userEmail === ''){
+        this.error = 'not email'
+      }else  if (this.userPass === ''){
+        this.error = 'not password'
+      }
+      this.error = ''
       this.users.push({
         name: this.userName,
         pass: this.userPass,
@@ -40,12 +49,9 @@ export default {
 </script>
 
 <style scoped>
-.button-container {
-  display: flex;
-  justify-content: center; /* Центрирует кнопки горизонтально */
-  gap: 10px; /* Добавляет расстояние между кнопками */
+.error {
+  color: red;
 }
-
 button:hover {
   background-color: white;
   color: black;
