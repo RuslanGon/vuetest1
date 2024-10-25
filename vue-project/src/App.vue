@@ -3,7 +3,11 @@
     <input type="text" v-model="userName" placeholder="name">
     <input type="email" v-model="userEmail" placeholder="email">
     <input type="password" v-model="userPass" placeholder="password">
-    <button>Send</button>
+    <button @click="SendData()">Send</button>
+    <button @click="resetData()">Reset</button>
+
+    <p>{{ users }}</p>
+ 
   </div>
 </template>
 
@@ -13,13 +17,26 @@ export default {
 
   data() {
     return {
+      users: [],
       userName: '',
       userEmail: '',
       userPass: ''
     }
   },
   methods: {
-
+    SendData() {
+      if(this.userName === '')return
+      this.users.push({
+        name: this.userName,
+        pass: this.userPass,
+        email: this.userEmail
+      })
+    },
+    resetData() {
+      this.userName = ''
+      this.userEmail = ''
+      this.userPass = ''
+    }
   }
 }
 </script>
