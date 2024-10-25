@@ -24,27 +24,34 @@ export default {
     }
   },
   methods: {
-    SendData() {
-      if (this.userName === ''){
-        this.error = 'not name'
-      }else  if (this.userEmail === ''){
-        this.error = 'not email'
-      }else  if (this.userPass === ''){
-        this.error = 'not password'
-      }
-      this.error = ''
-      this.users.push({
-        name: this.userName,
-        pass: this.userPass,
-        email: this.userEmail
-      })
-    },
-    resetData() {
-      this.userName = ''
-      this.userEmail = ''
-      this.userPass = ''
+  SendData() {
+    if (this.userName === '') {
+      this.error = 'Please enter a name';
+      return;
+    } else if (this.userEmail === '') {
+      this.error = 'Please enter an email';
+      return;
+    } else if (this.userPass === '') {
+      this.error = 'Please enter a password';
+      return;
     }
+
+    this.error = '';
+
+    this.users.push({
+      name: this.userName,
+      email: this.userEmail,
+      pass: this.userPass
+    });
+
+    this.resetData();
+  },
+  resetData() {
+    this.userName = '';
+    this.userEmail = '';
+    this.userPass = '';
   }
+}
 }
 </script>
 
