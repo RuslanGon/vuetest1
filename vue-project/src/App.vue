@@ -10,7 +10,10 @@
 <p>{{ el.email }} --- {{ el.pass }}</p>
   </div>
   <div v-if="users.length == 0">
-    <p>not contact</p>
+    <p>not users</p>
+  </div>
+  <div v-else-if="users.length == 1">
+    <p>We have one user</p>
   </div>
   <div class="button-container">
     <button @click="SendData()">Send</button>
