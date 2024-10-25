@@ -5,10 +5,8 @@
     <input type="password" v-model="userPass" placeholder="password">
     <p class="error">{{ error }}</p>
   </div>
-  <div class="users" v-for="(el, index) in users" :key="index">
-<h3>{{ el.name }}</h3>
-<p>{{ el.email }} --- {{ el.pass }}</p>
-  </div>
+  <User  v-for="(el, index) in users" :key="index" :el="el"/>
+
   <div v-if="users.length == 0">
     <p>not users</p>
   </div>
@@ -19,10 +17,13 @@
     <button @click="SendData()">Send</button>
     <!-- <button @click="resetData()">Reset</button> -->
   </div>
+
 </template>
 
 <script>
+import User from './components/User.vue'
 export default {
+  components: { User},
   data() {
     return {
       users: [],
