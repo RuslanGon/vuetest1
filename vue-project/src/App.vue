@@ -4,11 +4,17 @@
     <input type="email" v-model="userEmail" placeholder="email">
     <input type="password" v-model="userPass" placeholder="password">
     <p class="error">{{ error }}</p>
-    <p>{{ users }}</p>
+  </div>
+  <div class="users" v-for="(el, index) in users" :key="index">
+<h3>{{ el.name }}</h3>
+<p>{{ el.email }} --- {{ el.pass }}</p>
+  </div>
+  <div v-if="users.length == 0">
+    <p>not contact</p>
   </div>
   <div class="button-container">
     <button @click="SendData()">Send</button>
-    <button @click="resetData()">Reset</button>
+    <!-- <button @click="resetData()">Reset</button> -->
   </div>
 </template>
 
@@ -24,41 +30,46 @@ export default {
     }
   },
   methods: {
-  SendData() {
-    if (this.userName === '') {
-      this.error = 'Please enter a name';
-      return;
-    } else if (this.userEmail === '') {
-      this.error = 'Please enter an email';
-      return;
-    } else if (this.userPass === '') {
-      this.error = 'Please enter a password';
-      return;
-    }
+    SendData() {
+      if (this.userName === '') {
+        this.error = 'Please enter a name';
+        return;
+      } else if (this.userEmail === '') {
+        this.error = 'Please enter an email';
+        return;
+      } else if (this.userPass === '') {
+        this.error = 'Please enter a password';
+        return;
+      }
 
-    this.error = '';
+      this.error = '';
 
-    this.users.push({
-      name: this.userName,
-      email: this.userEmail,
-      pass: this.userPass
-    });
+      this.users.push({
+        name: this.userName,
+        email: this.userEmail,
+        pass: this.userPass
+      });
 
-    this.resetData();
-  },
-  resetData() {
-    this.userName = '';
-    this.userEmail = '';
-    this.userPass = '';
+      this.resetData();
+    },
+    // resetData() {
+    //   this.userName = '';
+    //   this.userEmail = '';
+    //   this.userPass = '';
+    // }
   }
-}
 }
 </script>
 
 <style scoped>
+.users {
+  background-color: rgb(220, 219, 219);
+  color: black;
+}
 .error {
   color: red;
 }
+
 button:hover {
   background-color: white;
   color: black;
@@ -100,6 +111,7 @@ input:focus {
   outline: none;
   border-color: gold;
 }
+
 .button-container {
   display: flex;
   flex-direction: row;
