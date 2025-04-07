@@ -47,6 +47,7 @@ export default {
 
       this.error = '';
 
+
       this.users.push({
         name: this.userName,
         email: this.userEmail,
